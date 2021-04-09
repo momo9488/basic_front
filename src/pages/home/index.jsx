@@ -1,0 +1,16 @@
+import React, { useEffect } from 'react';
+import { Button } from 'antd'
+// import st from "./notfound.module.scss";
+// import st from './notfound.scss';
+
+export default function () {
+ 
+  useEffect(() => {
+    
+  });
+  return (
+    <div>
+     <Button>ss</Button>
+    </div>
+  );
+}

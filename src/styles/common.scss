@@ -1,0 +1,95 @@
+/**
+*样式管理说明
+*1、该文件放全局公共样式
+*2、模块的公共样式在每个模块的根目录下创建与模块名同名的scss文件，加载到对应的模块的时候将会自动引入对应的样式，例如在indemnity目录下创建一个indemnity.scss文件，项目加载到indemnity模块的时候indemnity.scss(该文件引入后使用的样式为全局的，要注意样式的命名规范和层级关系)会自动引入
+*3、css模块化使用xxx.module.scss的独立样式进行引入（推荐使用）
+*/
+
+
+@import './reset.scss';
+@import './mixin.scss';
+
+html, body{
+  // font-size: rem(45);
+  font-size: 14px;
+  background: #f7f7f7;
+  font-family:'SimHei';
+}
+
+// 三种字体颜色
+.wa_font{
+  color: $wa; 
+}
+.er_font{
+  color: $er; 
+}
+.ok_font{
+  color: $ok; 
+}
+// 三种背景颜色
+.wa_bg{
+  background-color: $wa; 
+}
+.er_bg{
+  background-color: $er; 
+}
+.ok_bg{
+  background-color: $ok; 
+}
+
+// 按钮并排布局
+.btns{
+  @include flex(space-between);
+  .am-button{
+    @include lh(36);
+  }
+}
+
+
+
+// 修改antd的列表默认样式
+.common_list{
+  .am-list-body{
+    background-color: transparent;
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .am-list-item .am-list-line .am-list-content{
+    font-size: 14px;
+  }
+  .am-list-item .am-list-line .am-list-extra{
+    font-size: 14px;
+  }
+  .am-list-item .am-input-label, .am-textarea-label{
+    width: 120px!important;
+    font-size: 14px!important;
+  }
+  .am-list-item .am-input-control, .am-textarea-control{
+    font-size: 14px;
+    input, textarea{
+      font-size: 14px;
+    }
+    textarea{
+      height: 100px;
+    }
+    input::-webkit-input-placeholder, textarea::-webkit-textarea-placeholder  {
+        /* WebKit browsers */
+        font-size: 14px;
+    }
+    
+    input:-moz-placeholder, textarea::-webkit-textarea-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        font-size: 14px;
+    }
+    
+    input::-moz-placeholder, textarea::-webkit-textarea-placeholder {
+        /* Mozilla Firefox 19+ */
+        font-size: 14px;
+    }
+    
+    input:-ms-input-placeholder , textarea::-webkit-textarea-placeholder{
+        /* Internet Explorer 10+ */
+        font-size: 14px;
+    }
+  }
+}

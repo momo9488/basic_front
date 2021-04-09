@@ -1,0 +1,34 @@
+$wa: #F59A23;
+$ok: #4B7902;
+$er: #D9001B;
+
+//mixin
+// @function rem ($px) {
+//     @return $px/36+rem;
+// }
+
+@mixin flex($position: flex-start) {
+    display: flex;
+    align-items: center;
+    justify-content: $position;
+}
+
+@mixin fc($position:flex-start) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: $position;
+}
+
+
+@mixin lh($unit) {
+    height: $unit;
+    line-height: $unit;
+}
+
+@mixin lc($line: 1) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+}
